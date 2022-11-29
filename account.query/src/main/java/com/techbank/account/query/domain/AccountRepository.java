@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository extends CrudRepository<AccountRepository, String> {
+public interface AccountRepository extends CrudRepository<BankAccount, String> {
 
     Optional<BankAccount> findByAccountHolder(String accountHolder);
     List<BaseEntity> findByBalanceGreaterThan(double balance);
