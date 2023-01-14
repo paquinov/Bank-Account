@@ -4,6 +4,7 @@ import com.techbank.account.cmd.api.commands.CloseAccountCommand;
 import com.techbank.account.cmd.api.commands.CommandHandler;
 import com.techbank.account.cmd.api.commands.DepositFundsCommand;
 import com.techbank.account.cmd.api.commands.OpenAccountCommand;
+import com.techbank.account.cmd.api.commands.RestoreReadDbCommand;
 import com.techbank.account.cmd.api.commands.WithdrawFundsCommand;
 import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class CommandApplication {
 		commandDispatcher.registerHandler(DepositFundsCommand.class, command -> commandHandler.handle(command));
 		commandDispatcher.registerHandler(WithdrawFundsCommand.class, command -> commandHandler.handle(command));
 		commandDispatcher.registerHandler(CloseAccountCommand.class, command -> commandHandler.handle(command));
+		commandDispatcher.registerHandler(RestoreReadDbCommand.class, command -> commandHandler.handle(command));
 	}
 
 }
